@@ -30,7 +30,7 @@ proxyai::ProxyAI::ProxyAI(springai::OOAICallback* callback, const struct SSkirmi
         perror("socket failed. Error");
         throw std::exception();
     }
-    server.sin_addr.s_addr = inet_addr("192.168.1.192");
+    server.sin_addr.s_addr = inet_addr("127.0.0.1");
     server.sin_family = AF_INET;
     server.sin_port = htons(8765);
     if (connect(sock, (struct sockaddr *)&server , sizeof(server)) < 0) {
